@@ -1349,7 +1349,8 @@ VIGILBASE = OAuthProvider(
     summary="Grade a website's HTTP security headers and a domain's email security (SPF, DKIM, DMARC, MTA-STS) A–F.",
     base_url="https://vigilbase.com/api/v1/agent",
     docs_url="https://vigilbase.com/developers",
-    probe_path="/tools",  # free — a bad key gets 401 {"code":"unauthorized"} here
+    probe_path="/tools",  # free — a bad key gets 401, a key without tools:read 403
+    probe_reject_statuses=(401, 403),  # a valid key past its 30/min allowance answers 429
 )
 
 ANYAPI = OAuthProvider(

@@ -40,7 +40,7 @@ endpoints:
     input:
       note: "no parameters. Also the registry's health probe: a valid key or no key answers 200, an invalid key 401"
     test_request: {}
-    cost: {type: free, value: 0, currency: USD, unit: call, source: docs, source_url: https://vigilbase.com/developers, checked: '2026-10-17', confidence: documented, note: 'free on every tier; observed 200 with no key and 401 with a bad key on 2026-10-17'}
+    cost: {type: free, value: 0, currency: USD, unit: call, source: docs, source_url: https://vigilbase.com/developers, checked: '2026-10-17', confidence: documented, note: 'free on every tier'}
     docs_url: https://vigilbase.com/developers
 
   - id: vigilbase.web.security.headers
@@ -59,7 +59,7 @@ endpoints:
       note: "POST with Content-Type: application/json. Answers grade (A–F), gradeScore (0–100) and result.details per header; a site that could not be graded (challenge page, HTTP error, unreachable) answers 422 with grade null"
     test_request:
       body: {target: "https://github.com"}
-    cost: {type: free, value: 0, currency: USD, unit: call, source: docs, source_url: https://vigilbase.com/developers, checked: '2026-10-17', confidence: documented, note: 'free on every tier; observed 200 (grade B, 71) on 2026-10-17. Counts against the 20 scans/hour per client IP and per target quota'}
+    cost: {type: free, value: 0, currency: USD, unit: call, source: docs, source_url: https://vigilbase.com/developers, checked: '2026-10-17', confidence: documented, note: 'free on every tier; counts against the 20 scans/hour per client IP and per target quota'}
     docs_url: https://vigilbase.com/agent-skills/security-headers.md
 
   - id: vigilbase.web.domain.email_security
@@ -78,5 +78,5 @@ endpoints:
       note: "POST with Content-Type: application/json. Answers grade (A–F), gradeScore (0–100) and result.details per record; takes ~5-15 s. A domain that does not resolve answers 422 with grade null"
     test_request:
       body: {target: "github.com"}
-    cost: {type: free, value: 0, currency: USD, unit: call, source: docs, source_url: https://vigilbase.com/developers, checked: '2026-10-17', confidence: documented, note: 'free on every tier; observed 200 (grade C, 63) on 2026-10-17. Counts against the 20 scans/hour per client IP and per target quota'}
+    cost: {type: free, value: 0, currency: USD, unit: call, source: docs, source_url: https://vigilbase.com/developers, checked: '2026-10-17', confidence: documented, note: 'free on every tier; counts against the 20 scans/hour per client IP and per target quota'}
     docs_url: https://vigilbase.com/agent-skills/email-security.md
